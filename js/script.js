@@ -4,8 +4,6 @@
 // Dopo 30 secondi l'utente deve inserire un prompt alla volta i numeri che ha visto precedentemente.
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
-
-
 var arrayNumeriCasuali = []; // salviamo numeri casuali in array
 while (arrayNumeriCasuali.length < 5) {
   var genera = getRandom(); // genera numeri
@@ -15,9 +13,16 @@ while (arrayNumeriCasuali.length < 5) {
     arrayNumeriCasuali.push(genera);
   }
 }
-alert(arrayNumeriCasuali.sort()); // stampiamo numeri
+alert(arrayNumeriCasuali.sort()); // stampa numeri
+
+alert('Tra 30 secondi devi inserire uno alla vota i numeri che hai visto precedentemente');//messaggio di avvio del timer
 
 
+
+
+
+var number = 30;
+var timer = setInterval(countdown, 1000)
 
 
 
@@ -46,4 +51,14 @@ function isInArray(array, element) {
     i++;
   }
   return risultato;
+}
+// funzione per timer
+function countdown() {
+  if (number == 0){
+    alert('Sei pronto?');
+    clearInterval(timer);
+  } else {
+    number--;
+  }
+  console.log(timer, number);;
 }
