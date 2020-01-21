@@ -17,15 +17,31 @@ alert(arrayNumeriCasuali.sort()); // stampa numeri
 
 alert('Tra 30 secondi devi inserire uno alla vota i numeri che hai visto precedentemente');//messaggio di avvio del timer
 
+var number = 30; // numero di secondi da cui partire
+var timer = setInterval(countdown, 1000) // attivazione funzione timer che
 
+// In seguito deve chiedere all’utente di inserire uno alla volta i numeri comparsi precedentemente
 
+var i = 0;
+var numRicomparso = false;
+while (i < 5 ) {
+  var numeroUtente = parseInt(prompt('Inserisci uno alla volta i numeri che ti sono comparsi inizialemente'));
+  for (var j = 0; j < arrayNumeriCasuali.length; j++) {
+    if (numeroUtente == arrayNumeriCasuali[j]) {
+      numRicomparso = true;
+      console.log(numRicomparso);
+    }
+  }
+  i++;
+}
+// un array per i numeri generati dall'utente
+var numbersUser = [];
+var numeroUtente = true;
+if(isInArray(numbersUser, numeroUtente) == true) {
+  numbersUser.push(numeroUtente);
 
-
-var number = 30;
-var timer = setInterval(countdown, 1000)
-
-
-
+}
+alert(numbersUser.sort());
 
 
 
@@ -55,7 +71,7 @@ function isInArray(array, element) {
 // funzione per timer
 function countdown() {
   if (number == 0){
-    alert('Sei pronto?');
+    alert('Sei pronto ad inserire i numeri?');
     clearInterval(timer);
   } else {
     number--;
