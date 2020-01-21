@@ -53,7 +53,7 @@ function isInArray(array, element) {
 function getUserNumber() {
   while (arrayNumeriDigitati.length < 5) {
     var numeroInserito = parseInt(prompt('Inserisci un numero da 1 a 100: '));
-    if (arrayNumeriDigitati.includes(numeroInserito) == false) {
+    if (arrayNumeriDigitati.includes(numeroInserito) == true) {
       arrayNumeriDigitati.push(numeroInserito);
     }
   }
