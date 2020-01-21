@@ -4,13 +4,13 @@
 // Dopo 30 secondi l'utente deve inserire un prompt alla volta i numeri che ha visto precedentemente.
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
-var arrayNumeriCasuali =[];
-var arrayNumeriDigitati = [];
+var arrayNumeriCasuali =[]; // salviamo numeri casuali in array
+var arrayNumeriDigitati = []; // salviamo numeri digitati dall'utente in array
 var punteggio = 0;
-var arrayNumeriVincenti = [];
+var arrayNumeriVincenti = []; // salviamo numeri esatti in array
 $(document).ready(
   function (){
-    var arrayNumeriCasuali = []; // salviamo numeri casuali in array
+    // var arrayNumeriCasuali = [];
     while (arrayNumeriCasuali.length < 5) {
       var genera = getRandomIntInclusive(1, 100); // genera numeri
       // console.log(genera);
@@ -22,10 +22,10 @@ $(document).ready(
     console.log(arrayNumeriCasuali);
     // Un alert espone 5 numeri casuali.
     alert(arrayNumeriCasuali.sort());
-    // Da li parte un timer di 30 secondi.
     // Dopo 30 secondi l'utente deve inserire un prompt alla volta i numeri che ha visto precedentemente.
     setTimeout(getUserNumber, 3000);
     // console.log(arrayNumeroDigitati);
+
     // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
   }
 );
@@ -48,6 +48,7 @@ function isInArray(array, element) {
   }
   return risultato;
 }
+
 // funzione che parte per inserire 5 numeri
 function getUserNumber() {
   while (arrayNumeriDigitati.length < 5) {
