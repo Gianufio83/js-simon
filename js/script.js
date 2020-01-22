@@ -7,7 +7,6 @@
 var arrayNumeriCasuali =[]; // salviamo numeri casuali in array
 var arrayNumeriDigitati = []; // salviamo numeri digitati dall'utente in array
 var punteggio = 0;
-var arrayNumeriVincenti = []; // salviamo numeri esatti in array
 $(document).ready(
   function (){
     // var arrayNumeriCasuali = [];
@@ -57,8 +56,9 @@ function getUserNumber() {
       arrayNumeriDigitati.push(numeroInserito);
     }
   }
+  var arrayNumeriVincenti = []; // salviamo numeri esatti in array
   for (var i = 0; i < arrayNumeriCasuali.length; i++) {
-    if (arrayNumeriCasuali[i] == arrayNumeriDigitati[i]) {
+    if (arrayNumeriCasuali.includes(arraynumeriDigitati[i]) == true) {
       punteggio++;
       arrayNumeriVincenti.push(arrayNumeriDigitati[i]);
     }
